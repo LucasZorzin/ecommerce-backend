@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include("../partials/head") %>
+	</head>
+	<body>
+		<main class="page-wrapper bg-gra-03 p-b-50">
+		<div class="container">
+			<h1 class="text-center pt-4">Drink Shop</h1>
+			<h3 class="text-center m-4 text-primary"><%= title %></h3>
+			<div class="d-flex justify-content-center">
+				<div class="card text-center" style="width: 400px">
+					<div class="text-center">
+						<img src="<%= data.thumbnail %>" width="120" height="120" alt="Product" />
+					</div>
+					<div class="">
+						<h4 class=""><%= data.title %></h4>
+						<p class="my-4">$<%= data.description %></p>
+						<p class="display-2">$<%= data.price %></p>
+						<p class="">Code: <%= data.code %></p>
+						<a href="/home" class="btn btn-info rounded-pill">Ver lista completa</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	</body>
+</html>
