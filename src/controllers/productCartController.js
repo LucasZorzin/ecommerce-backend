@@ -53,7 +53,6 @@ function socketConnection(socket) {
     socket.on("disconnect", () => {
         try {
             chat.deleteAll();
-            // logger.info("Usuario Desconectado");
         } catch (error) {
             logger.error(error);
         }

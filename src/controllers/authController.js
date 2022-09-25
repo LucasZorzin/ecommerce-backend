@@ -1,12 +1,9 @@
 import logger from "../utils/logger.js";
 
-import CartApi from "../services/cartService.js";
-const cart = new CartApi();
-
 class AuthController {
     constructor() {}
 
-    async getSignup(req, res) {
+    async signup(req, res) {
         try {
             res.render("pages/signup");
         } catch (error) {
@@ -14,7 +11,7 @@ class AuthController {
         }
     }
 
-    async getLogin(req, res) {
+    async login(req, res) {
         try {
             res.render("pages/login");
         } catch (error) {
@@ -22,21 +19,21 @@ class AuthController {
         }
     }
 
-    async getFailSignup(req, res) {
+    async failSignup(req, res) {
         try {
-            res.render("pages/failSignup");
+            res.render("pages/fail-signup");
         } catch (error) {
             logger.warn(error);
         }
     }
-    async getFailLogin(req, res) {
+    async failLogin(req, res) {
         try {
-            res.render("pages/failLogin");
+            res.render("pages/fail-login");
         } catch (error) {
             logger.warn(error);
         }
     }
-    async postLogout(req, res) {
+    async logout(req, res) {
         if (req.user) {
             let nameUser = req.user.userName;
             req.logout(function (err) {

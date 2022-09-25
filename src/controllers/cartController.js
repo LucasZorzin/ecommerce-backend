@@ -15,7 +15,7 @@ class CartController {
             res.send("Carrito generado con éxito");
         } catch (error) {
             logger.warn(error);
-            res.status(404).json({
+            res.status(500).json({
                 error: -2,
                 descripcion: `Ruta: ${req.url} - Método: '${req.method}' No autorizado`,
             });
@@ -24,7 +24,6 @@ class CartController {
 
     async getById(req, res) {
         try {
-            // logger.info(selectedProducts)
             res.render("pages/cart", { cart: selectedProducts, totalPrice: totalPrice});
         } catch (error) {
             logger.warn(error);

@@ -21,7 +21,7 @@ import { cpus } from "os";
 const numCPUs = cpus().length;
 
 const { PORT, SERVER } = parseArg(process.argv.slice(2), {
-    default: { PORT: process.env.PORT || 8080, SERVER: "FORK" },
+    default: { PORT: process.env.PORT || 8080, SERVER: "FORK" }
 });
 
 if (cluster.isPrimary && SERVER === "CLUSTER") {
@@ -43,7 +43,7 @@ else {
     app.use(express.urlencoded({ extended: true }));
     app.use(cors());
     app.use(express.static(process.cwd() + "/public"));
-    app.use(session(config.configSession))
+    app.use(session(config.configSession));
     app.use(passport.initialize());
     app.use(passport.session());
 

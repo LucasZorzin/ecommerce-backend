@@ -10,7 +10,7 @@ class OrderController {
             return await order.makeOrder(req.params.userId, req.body.cartId);
         } catch (error) {
             logger.warn(error);
-            res.status(404).json({
+            res.status(500).json({
                 error: -2,
                 descripcion: `Ruta: ${req.url} - Método: '${req.method}' No autorizado`,
             });

@@ -21,7 +21,7 @@ const Config = {
     },
     firebase: {
         credential: process.env.FIREBASE_CREDENTIAL || admin.credential.cert(serviceAccount),
-        databaseURL: 'https://backend-coderhouse-cf169.firebaseio.com'
+        databaseURL: process.env.FIREBASE_DATABASE_URL || 'url'
     },
     configSession: {
         store: MongoStore.create({

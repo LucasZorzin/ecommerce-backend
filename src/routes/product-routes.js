@@ -9,7 +9,7 @@ const controller = new ProductsController();
 router.get("/form", controller.getFormAdd);
 
 //Agrega un producto
-router.post("/add", controller.addProduct);
+router.post("/new-product", controller.addProduct);
 
 //Obtiene un producto según el id
 router.get("/:id", controller.getById);

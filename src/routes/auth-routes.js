@@ -16,26 +16,26 @@ router.post(
     "/login",
     passport.authenticate("local-login", {
         successRedirect: "/home?statusCart=true",
-        failureRedirect: "/failLogin",
+        failureRedirect: "/fail-login",
     })
 );
-router.get("/login", controller.getLogin);
+router.get("/login", controller.login);
 
 router.post(
     "/signup",
     upload.single("userPhoto"),
     passport.authenticate("local-signup", {
         successRedirect: "/",
-        failureRedirect: "/failSignup",
+        failureRedirect: "/fail-signup",
     })
 );
 
-router.get("/signup", controller.getSignup);
+router.get("/signup", controller.signup);
 
-router.get("/failLogin", controller.getFailLogin);
+router.get("/fail-login", controller.failLogin);
 
-router.get("/failSignup", controller.getFailSignup);
+router.get("/fail-signup", controller.failSignup);
 
-router.post("/logout", controller.postLogout);
+router.post("/logout", controller.logout);
 
 export default router;
